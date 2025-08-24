@@ -180,7 +180,7 @@ const Input = ({}: Props) => {
 
   return (
     <div>
-      <div className="py-6 px-6 flex flex-col text-gray-400 gap-[18px] font-medium">
+      <div className="py-6 px-6 flex flex-col text-gray-600 gap-[18px] font-medium">
         <EditorContent editor={titleEditor} />
         <ScrollArea>
           <div className="max-h-[550px] text-sm">

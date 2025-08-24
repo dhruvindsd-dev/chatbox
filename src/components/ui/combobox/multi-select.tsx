@@ -118,7 +118,7 @@ export const MultiSelectDropdown = ({
         >
           <TooltipTrigger asChild>
             <PopoverTrigger asChild>
-              <motion.div
+              <motion.button
                 className={cn(
                   "py-1.5 px-3 inline-flex items-center gap-2 border border-gray-200 rounded-lg cursor-pointer",
                   "text-gray-600",
@@ -137,7 +137,7 @@ export const MultiSelectDropdown = ({
                       ? selectedItems[0]?.label
                       : `${selectedItems.length} selected`}
                 </span>
-              </motion.div>
+              </motion.button>
             </PopoverTrigger>
           </TooltipTrigger>
           <TooltipContent

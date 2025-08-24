@@ -79,7 +79,7 @@ export const SelectDropdown = ({
       >
         <TooltipTrigger asChild>
           <PopoverTrigger asChild>
-            <div
+            <button
               className={cn(
                 "py-1.5 px-3 inline-flex items-center gap-2 border border-gray-200 rounded-lg cursor-pointer",
                 "text-gray-600",
@@ -90,7 +90,7 @@ export const SelectDropdown = ({
               <span className="text-xs font-medium">
                 {item?.label || label}
               </span>
-            </div>
+            </button>
           </PopoverTrigger>
         </TooltipTrigger>
         <TooltipContent

@@ -45,7 +45,6 @@ const Suggestions = ({ editor, setTag, tags: selectedTags }: Props) => {
     if (!title) show = false;
 
     const filteredTags = getFilteredTags();
-
     if (filteredTags.length > 0 && title) show = true;
 
     if (show) {
