@@ -16,11 +16,9 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import { Plugin } from "prosemirror-state";
 import { EditorView } from "prosemirror-view";
-import { useState } from "react";
 import Attributes from "./attributes";
 import Controls from "./controls";
 import SimpleMention from "./mention/simple-mention";
-import Suggestions from "./suggestions";
 
 const PlainTextOnly = Extension.create({
   name: "plainTextOnly",
@@ -142,9 +140,6 @@ const EscapeHandler = Extension.create({
 type Props = Record<string, never>;
 
 const Input = ({}: Props) => {
-  const [, setContent] = useState("");
-  const [, setTitle] = useState("");
-
   const titleEditor = useEditor({
     immediatelyRender: true,
     extensions: [
@@ -156,7 +151,6 @@ const Input = ({}: Props) => {
         placeholder: "Task title",
       }),
     ],
-    onUpdate: (e) => setTitle(e.editor.getText()),
   });
 
   const descriptionEditor = useEditor({
@@ -182,7 +176,6 @@ const Input = ({}: Props) => {
         autolink: false,
       }),
     ],
-    onUpdate: (e) => setContent(e.editor.getHTML()),
   });
 
   return (
@@ -195,7 +188,7 @@ const Input = ({}: Props) => {
           </div>
         </ScrollArea>
       </div>
-      <Attributes title={titleEditor.getText()} />
+      <Attributes editor={titleEditor} />
       <Controls editor={descriptionEditor} titleEditor={titleEditor} />
     </div>
   );

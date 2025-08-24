@@ -26,10 +26,8 @@ const LinkBtn = ({ editor }: Props) => {
       setHasSelection(!editor.state.selection.empty);
     };
 
-    // Initial check
     updateSelection();
 
-    // Listen for editor updates
     editor.on("selectionUpdate", updateSelection);
     editor.on("update", updateSelection);
 
